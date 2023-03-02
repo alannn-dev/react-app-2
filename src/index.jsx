@@ -6,7 +6,7 @@ import Home from './pages/Home'
 import Survey from './pages/Survey'
 import Header from './components/Header'
 import Results from './pages/Results'
-import Freelance from './pages/Freelance'
+import Freelances from './pages/Freelances'
 import Error from './components/Error'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
@@ -16,7 +16,7 @@ root.render(
     <Routes>
       <Route exact path="/" element={<Home />}></Route>
       <Route path="/survey/:questionNumber" element={<Survey />}></Route>
-      <Route path="/freelance" element={<Freelance />}></Route>
+      <Route path="/freelances" element={<Freelances />}></Route>
       <Route path="/results" element={<Results />}></Route>
       <Route path="*" element={<Error />}></Route>
     </Routes>
