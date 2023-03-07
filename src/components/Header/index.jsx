@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import { StyledLink } from '../../utils/styles/Atoms'
 import LightLogo from '../../assets/light-logo.png'
 import DarkLogo from '../../assets/dark-logo.png'
+import colors from '../../utils/styles/colors'
 import { useTheme } from '../../utils/hooks'
 
 const HomeLogo = styled.img`
@@ -23,7 +24,8 @@ const NavBar = styled.nav`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: rgb(249, 249, 252);
+  background-color: ${({ theme }) =>
+    theme === 'light' ? colors.backgroundLight : colors.backgroundDark};
   width: 100%;
   padding-top: 20px;
   padding-bottom: 20px;
@@ -37,7 +39,7 @@ function Header() {
       <Link to="/">
         <HomeLogo src={theme === 'light' ? DarkLogo : LightLogo} />
       </Link>
-      <NavBar className="navbar">
+      <NavBar theme={theme}>
         <StyledLink $theme={theme} to="/">
           Accueil
         </StyledLink>
