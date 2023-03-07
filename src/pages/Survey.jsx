@@ -48,17 +48,12 @@ const ReplyBox = styled.button`
   cursor: pointer;
   box-shadow: ${(props) =>
     props.isSelected ? `0px 0px 0px 2px ${colors.primary} inset` : 'none'};
-  &:first-child {
-    margin-right: 15px;
-  }
-  &:last-of-type {
-    margin-left: 15px;
-  }
 `
 
 const ReplyWrapper = styled.div`
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  gap: 20px;
 `
 
 function Survey() {

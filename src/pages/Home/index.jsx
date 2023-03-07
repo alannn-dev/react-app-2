@@ -17,6 +17,7 @@ const HomerContainer = styled.div`
   display: flex;
   flex-direction: row;
   max-width: 1200px;
+  min-width: 230px;
 `
 
 const LeftCol = styled.div`
@@ -38,6 +39,7 @@ const StyledTitle = styled.h2`
 
 const Illustration = styled.img`
   flex: 1;
+  width: 30%;
 `
 
 function Home() {

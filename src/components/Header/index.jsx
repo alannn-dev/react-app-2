@@ -7,13 +7,16 @@ import { useTheme } from '../../utils/hooks'
 
 const HomeLogo = styled.img`
   height: 70px;
+  margin-bottom: 25px;
 `
 
 const NavContainer = styled.nav`
-  padding: 30px;
+  padding-top: 30px;
+  padding-bottom: 30px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 `
 
 function Header() {

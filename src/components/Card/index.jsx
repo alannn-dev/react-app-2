@@ -1,3 +1,4 @@
+import React from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import colors from '../../utils/styles/colors'
@@ -30,6 +31,8 @@ const CardWrapper = styled.div`
   flex-direction: column;
   justify-content: space-around;
   padding: 15px;
+  justify-content: space-around;
+  align-items: center;
   background-color: ${({ theme }) =>
     theme === 'light' ? colors.backgroundLight : colors.backgroundDark};
   border-radius: 30px;
@@ -40,7 +43,6 @@ const CardWrapper = styled.div`
     box-shadow: 2px 2px 10px #e2e3e9;
   }
 `
-
 function Card({ label, title, picture }) {
   const { theme } = useTheme()
 
@@ -52,6 +54,27 @@ function Card({ label, title, picture }) {
     </CardWrapper>
   )
 }
+// CLASS COMPONENT TEST
+/* class Card extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+
+  render() {
+    const { label, title, picture } = this.props
+    const { theme } = this.state
+
+    return (
+      <CardWrapper theme={theme}>
+        <CardLabel theme={theme}>{label}</CardLabel>
+        <CardImage src={picture} alt="freelance" />
+        <CardTitle theme={theme}>{title}</CardTitle>
+      </CardWrapper>
+    )
+  }
+}
+ */
 
 Card.propTypes = {
   label: PropTypes.string.isRequired,

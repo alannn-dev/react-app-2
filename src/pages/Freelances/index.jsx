@@ -5,7 +5,9 @@ import { Loader } from '../../utils/styles/Atoms'
 import { useFetch, useTheme } from '../../utils/hooks'
 
 const CardsContainer = styled.div`
-  display: grid;
+  display: flex;
+  flex-flow: wrap;
+  justify-content: center;
   gap: 24px;
   grid-template-rows: 350px 350px;
   grid-template-columns: repeat(2, 1fr);
