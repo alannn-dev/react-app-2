@@ -1,8 +1,9 @@
+import { useFetch, useTheme } from '../../utils/hooks'
 import Card from '../../components/Card'
 import styled from 'styled-components'
 import colors from '../../utils/styles/colors'
 import { Loader } from '../../utils/styles/Atoms'
-import { useFetch, useTheme } from '../../utils/hooks'
+import { Link } from 'react-router-dom'
 
 const CardsContainer = styled.div`
   display: flex;
@@ -42,9 +43,7 @@ function Freelances() {
     `http://localhost:8000/freelances`
   )
 
-  // Ici le "?" permet de s'assurer que data existe bien.
-  // Vous pouvez en apprendre davantage sur cette notation ici :
-  // https://developer.mozilla.org/fr/docs/Web/JavaScript/Reference/Operators/Optional_chaining
+  // "?" => Pour s'assurer que data existe.
   const freelancersList = data?.freelancersList
 
   if (error) {
@@ -63,13 +62,15 @@ function Freelances() {
         </LoaderWrapper>
       ) : (
         <CardsContainer>
-          {freelancersList.map((profile, index) => (
-            <Card
-              key={`${profile.name}-${index}`}
-              label={profile.job}
-              title={profile.name}
-              picture={profile.picture}
-            />
+          {freelancersList?.map((profile) => (
+            <Link key={`freelance-${profile.id}`} to={`/profile/${profile.id}`}>
+              <Card
+                label={profile.job}
+                title={profile.name}
+                picture={profile.picture}
+                theme={theme}
+              />
+            </Link>
           ))}
         </CardsContainer>
       )}

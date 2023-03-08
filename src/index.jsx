@@ -7,6 +7,7 @@ import Results from './pages/Results'
 import Freelances from './pages/Freelances'
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Profile from './pages/Profile'
 import Error from './components/Error'
 import GlobalStyle from './utils/styles/GlobalStyle'
 import { ThemeProvider, SurveyProvider } from './utils/context'
@@ -24,6 +25,8 @@ root.render(
           <Route path="/freelances" element={<Freelances />}></Route>
           <Route path="/results" element={<Results />}></Route>
           <Route path="*" element={<Error />}></Route>
+          <Route path="*" element={<Error />}></Route>
+          <Route path="/profile/:id" element={<Profile />} />
         </Routes>
       </Router>
       <Footer />
