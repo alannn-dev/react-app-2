@@ -53,7 +53,7 @@ const LoaderWrapper = styled.div`
   justify-content: center;
 `
 
-function formatFetchParams(answers) {
+export function formatFetchParams(answers) {
   const answerNumbers = Object.keys(answers)
 
   return answerNumbers.reduce((previousParams, answerNumber, index) => {
@@ -61,6 +61,14 @@ function formatFetchParams(answers) {
     const separator = isFirstParam ? '' : '&'
     return `${previousParams}${separator}a${answerNumber}=${answers[answerNumber]}`
   }, '')
+}
+
+// Test unitaire
+export function formatJobList(title, listLength, index) {
+  if (index === listLength - 1) {
+    return title
+  }
+  return `${title},`
 }
 
 function Results() {
@@ -96,8 +104,8 @@ function Results() {
               key={`result-title-${index}-${result.title}`}
               theme={theme}
             >
-              {result.title}
-              {index === resultsData.length - 1 ? '' : ','}
+              {/* Test unitaire*/}
+              {formatJobList(result.title, resultsData.length, index)}
             </JobTitle>
           ))}
       </ResultsTitle>
